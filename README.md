@@ -20,6 +20,8 @@ This code is mostly a port of code from my Raspberry Pi Energenie repo here:
 
 [Green button socket](https://cpc.farnell.com/energenie/ener002/1-gang-socket-radio-controlled/dp/PL14928)
 
+[Energenie Products](https://energenie4u.co.uk)
+
 Optionally, any other Energenie device from their catalogue (this code now supports
 every device in the Energenie catalogue, if correctly configured).
 
@@ -55,7 +57,10 @@ GP_TX_LED = 26  # LED1, shows when transmitting
 GP_RX_LED = 27  # LED2, shows when receiving
 ```
 
-You need a 173mm bit of wire soldered to the ANT pin (bottom right)
+You need a 173mm bit of wire soldered to the ANT pin (bottom right of green
+radio board)
+
+![Pico and RFM69](pico_rfm69.png "Pico and RFM69 Radio")
 
 # Pairing a legacy (green button) socket
 
@@ -148,6 +153,11 @@ look at the existing support for these devices in my Raspberry Pi pyenergenie
 repo here, to work it out yourself:
 
 [github.com/whaleygeek/pyenergenie](https://github.com/whaleygeek/pyenergenie)
+
+NOTE: The big list of energenie products can be found on this page:
+[Energenie Producs](https://energenie4u.co.uk) but beware that the WiFi plug
+is not supported by this library (because it works on Wifi, not 433MHz).
+
 
 David Whale, Feb 2023
 
