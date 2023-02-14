@@ -1,3 +1,5 @@
+# user_console.py    26/05/2022  D.J.Whale
+
 class ConsoleUser:
     ON, OFF = ("on", "off")
 

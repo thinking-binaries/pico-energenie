@@ -1,3 +1,5 @@
+# user_pico.py  26/05/2022  D.J.Whale
+
 from machine import Pin
 
 class PicoUser:

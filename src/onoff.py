@@ -1,7 +1,8 @@
-# onoff.py  09/05/2022  D.J.Whale - turn an Energenie socket on and off
+# onoff.py    26/05/2022  D.J.Whale - turn an Energenie socket on and off
 
+##from user_pico import user
+from user_console import user
 import energenie
-from user_pico import user
 
 light = energenie.Socket()
 
@@ -16,5 +17,6 @@ try:
         elif user.wants_off():
             light.off()
             user.is_off()
+
 except KeyboardInterrupt:
     pass

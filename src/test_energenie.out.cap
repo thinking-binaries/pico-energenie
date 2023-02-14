@@ -1,0 +1,255 @@
+0D 04 02 01 00 C2 9F B4 0C F5 42 F1 3D EF
+0D 04 02 01 00 C2 9F B4 0C F5 43 F1 0E DE
+encoded msg:0D 04 02 4B A8 98 36 EF 9C C0 3D E2 25 72
+{
+  "type": "OpenThings.Lite",
+  "header": {
+    "mfrid": 4,
+    "productid": 2,
+    "sensorid": 883
+  },
+  "recs": [
+    {
+      "wr": false,
+      "paramid": 115,
+      "paramname": "SWITCH_STATE",
+      "paramunit": "",
+      "typeid": 0,
+      "typename": "UINT",
+      "length": 1,
+      "valuebytes": "01",
+      "value": 1
+    }
+  ],
+  "rawbytes": "0D 04 02 4B A8 00 03 73 73 01 01 00 E0 1C"
+}
+encoded msg:0D 04 02 B9 28 0C 8D 78 8F 65 BA ED 7B 84
+{
+  "type": "OpenThings.Lite",
+  "header": {
+    "mfrid": 4,
+    "productid": 2,
+    "sensorid": 883
+  },
+  "recs": [
+    {
+      "wr": false,
+      "paramid": 115,
+      "paramname": "SWITCH_STATE",
+      "paramunit": "",
+      "typeid": 0,
+      "typename": "UINT",
+      "length": 1,
+      "valuebytes": "00",
+      "value": 0
+    }
+  ],
+  "rawbytes": "0D 04 02 B9 28 00 03 73 73 01 00 00 D3 2D"
+}
+encoded msg:16 04 05 C9 8C FB D7 5A 44 8E EE 83 21 CC CB CF 4A B8 64 66 2C 64 AF
+{
+  "type": "OpenThings.Lite",
+  "header": {
+    "mfrid": 4,
+    "productid": 5,
+    "sensorid": 441
+  },
+  "recs": [
+    {
+      "wr": false,
+      "paramid": 80,
+      "paramname": "APPARENT_POWER",
+      "paramunit": "VA",
+      "typeid": 128,
+      "typename": "SINT",
+      "length": 2,
+      "valuebytes": "00 B3",
+      "value": 179
+    },
+    {
+      "wr": false,
+      "paramid": 118,
+      "paramname": "VOLTAGE",
+      "paramunit": "V",
+      "typeid": 32,
+      "typename": "UINT_BP8",
+      "length": 2,
+      "valuebytes": "03 5D",
+      "value": 3.36328125
+    },
+    {
+      "wr": false,
+      "paramid": 105,
+      "paramname": "CURRENT",
+      "paramunit": "A",
+      "typeid": 32,
+      "typename": "UINT_BP8",
+      "length": 2,
+      "valuebytes": "00 A4",
+      "value": 0.640625
+    }
+  ],
+  "rawbytes": "16 04 05 C9 8C 00 01 B9 50 82 00 B3 76 22 03 5D 69 22 00 A4 00 73 0B"
+}
+encoded msg:1C 04 02 58 0B 55 24 23 BC D2 AC 50 8D 26 5B A2 CF 74 B7 73 47 4A A9 F1 97 F1 F0 3F 23
+{
+  "type": "OpenThings.Lite",
+  "header": {
+    "mfrid": 4,
+    "productid": 2,
+    "sensorid": 883
+  },
+  "recs": [
+    {
+      "wr": false,
+      "paramid": 112,
+      "paramname": "REAL_POWER",
+      "paramunit": "W",
+      "typeid": 128,
+      "typename": "SINT",
+      "length": 2,
+      "valuebytes": "00 03",
+      "value": 3
+    },
+    {
+      "wr": false,
+      "paramid": 113,
+      "paramname": "REACTIVE_POWER",
+      "paramunit": "VAR",
+      "typeid": 128,
+      "typename": "SINT",
+      "length": 2,
+      "valuebytes": "FF FE",
+      "value": -2
+    },
+    {
+      "wr": false,
+      "paramid": 118,
+      "paramname": "VOLTAGE",
+      "paramunit": "V",
+      "typeid": 0,
+      "typename": "UINT",
+      "length": 1,
+      "valuebytes": "F9",
+      "value": 249
+    },
+    {
+      "wr": false,
+      "paramid": 102,
+      "paramname": "FREQUENCY",
+      "paramunit": "Hz",
+      "typeid": 32,
+      "typename": "UINT_BP8",
+      "length": 2,
+      "valuebytes": "31 F3",
+      "value": 49.94921875
+    },
+    {
+      "wr": false,
+      "paramid": 115,
+      "paramname": "SWITCH_STATE",
+      "paramunit": "",
+      "typeid": 0,
+      "typename": "UINT",
+      "length": 1,
+      "valuebytes": "00",
+      "value": 0
+    }
+  ],
+  "rawbytes": "1C 04 02 58 0B 00 03 73 70 82 00 03 71 82 FF FE 76 01 F9 66 22 31 F3 73 01 00 00 26 9B"
+}
+Init
+spi (WR R_PALEVEL) 91 7F
+spi (WR R_OCP) 93 00
+spi (WR R_AFCCTRL) 8B 20
+spi (WR R_LNA) 98 00
+spi (WR R_RSSITHRESH) A9 F0
+spi (WR R_DIOMAPPING1) A5 04
+spi (WR R_DATAMODUL) 82 08
+spi (WR R_FDEVMSB) 85 00
+spi (WR R_FDEVLSB) 86 00
+spi (WR R_FRMSB) 87 6C
+spi (WR R_FRMID) 88 7A
+spi (WR R_FRLSB) 89 E1
+spi (WR R_RXBW) 99 41
+spi (WR R_BITRATEMSB) 83 1A
+spi (WR R_BITRATELSB) 84 00
+spi (WR R_PREAMBLEMSB) AC 00
+spi (WR R_PREAMBLELSB) AD 00
+spi (WR R_SYNCCONFIG) AE 00
+spi (WR R_PACKETCONFIG1) B7 80
+spi (WR R_PAYLOADLEN) B8 00
+spi (WR R_OPMODE) 81 04
+
+Legacy ON
+spi (WR R_OPMODE) 81 0C
+spi (WR R_FIFOTHRESH) BC 0F
+byte:80
+spi (WR R_FIFO) 80 00 00 00 E8 E8 88 88 88 8E 8E EE 88 88 EE EE
+spi (RD R_IRQFLAGS2) 28 00
+spi (RD R_IRQFLAGS2) 28 00
+spi (WR R_OPMODE) 81 04
+
+Legacy OFF
+spi (WR R_OPMODE) 81 0C
+spi (WR R_FIFOTHRESH) BC 0F
+byte:80
+spi (WR R_FIFO) 80 00 00 00 E8 E8 88 88 88 8E 8E EE 88 88 EE E8
+spi (RD R_IRQFLAGS2) 28 00
+spi (RD R_IRQFLAGS2) 28 00
+spi (WR R_OPMODE) 81 04
+
+MiHome ON
+spi (WR R_FDEVLSB) 86 EC
+spi (WR R_LNA) 98 08
+spi (WR R_SYNCVALUE1) AF 2D
+spi (WR R_FRMSB) 87 6C
+spi (WR R_NODEADRS) B9 06
+spi (WR R_PALEVEL) 91 7F
+spi (WR R_AFCCTRL) 8B 00
+spi (WR R_DATAMODUL) 82 00
+spi (WR R_FRMID) 88 93
+spi (WR R_RXBW) 99 43
+spi (WR R_PACKETCONFIG1) B7 A0
+spi (WR R_PAYLOADLEN) B8 42
+spi (WR R_SYNCVALUE2) B0 D4
+spi (WR R_OCP) 93 00
+spi (WR R_FDEVMSB) 85 01
+spi (WR R_BITRATEMSB) 83 1A
+spi (WR R_FRLSB) 89 33
+spi (WR R_SYNCCONFIG) AE 88
+spi (WR R_BITRATELSB) 84 0B
+spi (WR R_OPMODE) 81 0C
+spi (WR R_FIFOTHRESH) BC 0D
+byte:80
+spi (RD R_LISTEN1) 0D 04 02 01 00 C2 9F B4 0C F5 42 F1 3D EF
+spi (RD R_IRQFLAGS2) 28 00
+byte:80
+spi (RD R_LISTEN1) 0D 04 02 01 00 C2 9F B4 0C F5 42 F1 3D EF
+spi (RD R_IRQFLAGS2) 28 00
+byte:80
+spi (RD R_LISTEN1) 0D 04 02 01 00 C2 9F B4 0C F5 42 F1 3D EF
+spi (RD R_IRQFLAGS2) 28 00
+byte:80
+spi (RD R_LISTEN1) 0D 04 02 01 00 C2 9F B4 0C F5 42 F1 3D EF
+spi (RD R_IRQFLAGS2) 28 00
+spi (RD R_IRQFLAGS2) 28 00
+spi (WR R_OPMODE) 81 04
+
+MiHome OFF
+spi (WR R_OPMODE) 81 0C
+spi (WR R_FIFOTHRESH) BC 0D
+byte:80
+spi (RD R_LISTEN1) 0D 04 02 01 00 C2 9F B4 0C F5 43 F1 0E DE
+spi (RD R_IRQFLAGS2) 28 00
+byte:80
+spi (RD R_LISTEN1) 0D 04 02 01 00 C2 9F B4 0C F5 43 F1 0E DE
+spi (RD R_IRQFLAGS2) 28 00
+byte:80
+spi (RD R_LISTEN1) 0D 04 02 01 00 C2 9F B4 0C F5 43 F1 0E DE
+spi (RD R_IRQFLAGS2) 28 00
+byte:80
+spi (RD R_LISTEN1) 0D 04 02 01 00 C2 9F B4 0C F5 43 F1 0E DE
+spi (RD R_IRQFLAGS2) 28 00
+spi (RD R_IRQFLAGS2) 28 00
+spi (WR R_OPMODE) 81 04
