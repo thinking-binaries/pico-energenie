@@ -4,7 +4,7 @@
 from user_console import user
 import energenie
 
-light = energenie.Socket()
+light = energenie.LegacySocket()
 
 user.waiting()
 

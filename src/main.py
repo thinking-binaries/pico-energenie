@@ -43,7 +43,6 @@ def test_receive_ot():
     """Receive a raw payload and print it"""
     print("test_receive_ot")
     radio = energenie.radio
-    buffer = bytearray(radio.MTU)
 
     radio.always_receive()
     while True:

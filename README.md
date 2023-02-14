@@ -68,18 +68,18 @@ To 'learn' the code to a socket, hold the green button on socket until
 the socket LED flashes. Then use this code:
 ```
   import energenie
-  light = LegacySocket()
+  light = energenie.LegacySocket()
   light.on()
 ```
 
 The LED on the socket should flash a few times and the code is learnt.
 
-# Tested the paired legacy socket
+# Testing the paired legacy socket
 Use this simple code at the REPL prompt, to test your switch works:
 
 ```
   import energenie
-  light = LegacySocket()
+  light = energenie.LegacySocket()
   light.on()
 ```
 
@@ -110,7 +110,7 @@ controller I own. But you can set a different address within that 20-bit
 range and 'learn' any switches you have to that new code (as above).
 
 ```
-light2 = LegacySocket(0x6C6C6)
+light2 = energenie.LegacySocket(0x6C6C6)
 light2.on()
 ```
 
@@ -118,18 +118,18 @@ If you have a 4-gang socket (or a dimmer switch), there are 4 sub-channels
 on those devices, and you can set the sub channel as follows:
 
 ```
-4gang_A = LegacySocket(channel=1)
-4gang_B = LegacySocket(channel=2)
-4gang_C = LegacySocket(channel=3)
-4gang_D = LegacySocket(channel=4)
-4gang_ALL = LegacySocket(channel=0)
+gang4_A = energenie.LegacySocket(channel=1)
+gang4_B = energenie.LegacySocket(channel=2)
+gang4_C = energenie.LegacySocket(channel=3)
+gang4_D = energenie.LegacySocket(channel=4)
+gang4_ALL = energenie.LegacySocket(channel=0)
 ```
 
 Note that channel 0 means 'all channels'. Thus to turn all sockets off
 on your 4-gang, use this:
 
 ```
-4gang_ALL.off()
+gang4_ALL.off()
 ```
 
 # MiHome devices
