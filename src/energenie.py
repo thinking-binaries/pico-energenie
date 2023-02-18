@@ -479,13 +479,26 @@ class EnergenieRadio:
     FOREVER = 0xFFFFFFFF
     MTU = 66
 
+    # see: https://www.ti.com/lit/an/swra048/swra048.pdf table 9
+    # see datasheet table 10
+    #R_PALEVEL            012 xxxxx
+    # normal power radio, tx on RFIO pin (-18dBm..+13dBm)
+    V_RFIO_N18_DBM   = 0b_100_00000    # PA0: -18dBm+0 = -18dBm
+    V_RFIO_10_DBM    = 0b_100_11100    # PA0: -18dBm+28 = 10dBm (swra048 limit in UK)
+    ##V_RFIO_MAX     = 0b_100_11111    # PA0: -18dBm+31 = 13dBm (DON'T USE IN UK)
+
+    # high power (HCW) radio, tx on PA_BOOST pin  (PA1:-2dBm..13dBm, PA1+2:+2dBm..+17dBm, PA1+2+HIGHP:+5dBm..+20dBm)
+    # datasheet: only the 16 upper values of PLEV are used with PA1 or PA2 combinations
+    V_PABOOST_0_DBM  = 0b_010_1_0010    # PA1: -18dBm + PLEV(18) = 0dBm   # swra048 433.05..434.79 0dBm duty(any) chbw(any)
+    V_PABOOST_10_DBM = 0b_010_1_1100    # PA1: -18dBm + PLEV(28) = 10dBm  # swra048 433.05..434.79 10dBm duty(<10%) or chbw(<25kHz)
+
     R = RFM69
     OOK_ENERGENIE_CFG = (
         # RFM69HCW (high power)
-        (R.R_PALEVEL,       0x7F),              # RFM69HCW high power PA_BOOST PA1+PA2
-        (R.R_OCP,           0x00),              # RFM69HCW over current protect off
+        (R.R_PALEVEL,       V_PABOOST_10_DBM),  # RFM69HCW PA_BOOST PA1 10%duty 25kHz bw max (ANT=PABOOST PIN)
         #RFM69 (low power)
-        ##{R.R_PALEVEL,      0x9F},             # RMF69 (Energenie RT board) 13dBm, PA0=ON
+        ##{R.R_PALEVEL,     V_RFIO_10_DBM},     # RMF69 (Energenie RT board) PA0 10%duty 25kHz bw max (ANT=RFIO PIN)
+
         #OOK specific
         (R.R_AFCCTRL,       0x20),              # Improved AFC
         (R.R_LNA,           0x00),              # LNA 50ohm, set by AGC loop
@@ -509,10 +522,10 @@ class EnergenieRadio:
 
     FSK_ENERGENIE_CFG = {
         # RFM69HCW (high power)
-        (R.R_PALEVEL,       0x7F),              # RFM69HCW high power PA_BOOST PA1+PA2
-        (R.R_OCP,           0x00),              # RFM69HCW over current protect off
-        # RFM69 (low power)
-        ##(R.R_PALEVEL,     0x9F),              # RMF69 (Energenie RT board) 13dBm, PA0=ON
+        (R.R_PALEVEL,       V_PABOOST_10_DBM),  # RFM69HCW PA_BOOST PA1 10%duty 25kHz bw max (ANT=PABOOST PIN)
+        #RFM69 (low power)
+        ##{R.R_PALEVEL,     V_RFIO_10_DBM},     # RMF69 (Energenie RT board) PA0 10%duty 25kHz bw max (ANT=RFIO PIN)
+
         # FSK specific
         (R.R_DATAMODUL,     R.V_DATAMODUL_FSK), # modulation scheme FSK
         (R.R_AFCCTRL,       R.V_AFCCTRLS),      # standard AFC routine
